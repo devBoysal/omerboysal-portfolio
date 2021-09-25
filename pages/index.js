@@ -64,11 +64,16 @@ export default function Home({ allPostsData }) {
 							value: 80,
 						},
 						size: {
-							value: 1,
+							value: 2,
 						},
 						move: {
 							speed: 1,
 						},
+						shape: {
+							polygon: {
+								nb_sides: 10
+							}
+						}
 					},
 					interactivity: {
 						events: {
