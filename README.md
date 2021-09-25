@@ -18,7 +18,7 @@ import Link from 'next/link';
 ```
 This will import the `Link` component.
 
-Note: If you need to link to an external page outside the Next.js app, just use an `<a>` tag without Link.
+> Note: If you need to link to an external page outside the Next.js app, just use an `<a>` tag without Link.
 
 If you need to add attributes like, for example, `className`, add it to the `<a>` tag, not to the Link tag.
 
@@ -36,9 +36,6 @@ Notice that `<Head>` is used instead of the lowercase `<head>`. `<Head>` is a Re
 It allows you to modify the `<head>` of a page.
 
 You can import the Head component from the `next/head` module.
-
-
-
 
 
 
@@ -64,4 +61,21 @@ export async function getStaticProps() {
 ```
 Essentially, getStaticProps allows you to tell Next.js: “Hey, this page has some data dependencies — so when you pre-render this page at build time, make sure to resolve them first!”
 
+
 > **Note**: In development mode, getStaticProps runs on each request instead.
+
+
+## Deployment
+When you have a pull request open, Vercel automatically creates a preview deployment for that branch on every push. The preview URL will always point to the latest preview deployment.
+
+You can share this preview URL with your collaborators and get immediate feedback.
+
+If your preview deployment looks good, merge it to main. When you do this, Vercel automatically creates a production deployment.
+
+Develop, Preview, Ship
+We’ve just gone through the workflow we call DPS: Develop, Preview, and Ship.
+
+- Develop: We’ve written code in Next.js and used the Next.js development server running to take advantage of its hot reloading feature.
+- Preview: We’ve pushed changes to a branch on GitHub, and Vercel created a preview deployment that’s available via a URL.
+We can share this preview URL with others for -feedback. In addition to doing code reviews, you can do deployment previews.
+- Ship: We’ve merged the pull request to main to ship to production.
