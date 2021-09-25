@@ -61,7 +61,7 @@ export default function Home({ allPostsData }) {
 					},
 					particles: {
 						number: {
-							value: 250,
+							value: 80,
 						},
 						size: {
 							value: 1,
