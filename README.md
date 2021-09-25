@@ -36,3 +36,32 @@ Notice that `<Head>` is used instead of the lowercase `<head>`. `<Head>` is a Re
 It allows you to modify the `<head>` of a page.
 
 You can import the Head component from the `next/head` module.
+
+
+
+
+
+
+## Static Generation with Data using `getStaticProps`
+How does it work? Well, in Next.js, when you export a page component, you can also export an `async` function called `getStaticProps`.
+If you do this, then:
+
+- `getStaticProps` runs at build time in production, and…
+- Inside the function, you can fetch external data and send it as props to the page.
+```javascript
+export default function Home(props) { ... }
+
+export async function getStaticProps() {
+  // Get external data from the file system, API, DB, etc.
+  const data = ...
+
+  // The value of the `props` key will be
+  //  passed to the `Home` component
+  return {
+    props: ...
+  }
+}
+```
+Essentially, getStaticProps allows you to tell Next.js: “Hey, this page has some data dependencies — so when you pre-render this page at build time, make sure to resolve them first!”
+
+> **Note**: In development mode, getStaticProps runs on each request instead.
