@@ -26,7 +26,7 @@ export default function Home({ allPostsData }) {
 			</Head>
 
 			<div className="body__container">
-				<section className={utilStyles.headingMd}>
+				<section className={`${utilStyles.headingMd} ${utilStyles.subheading}`}>
 					<p>Frontend Web Developer</p>
 					<p>
 						(This is a sample website - you’ll be building a site like this on{" "}
