@@ -4,7 +4,7 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
-import Particles from "react-particles-js";
+import Particles from "react-tsparticles";
 
 export async function getStaticProps() {
 	const allPostsData = getSortedPostsData();
@@ -50,45 +50,89 @@ export default function Home({ allPostsData }) {
 			</div>
 			<Particles
 				id="tsparticles"
-				params={{
+				options={{
+					fullScreen: {
+						enable: "true",
+					},
 					background: {
 						color: {
-							value: "#343434",
+							value: "#1C1C1C",
 						},
 					},
-					fullScreen: {
-						enable: true,
-					},
-					particles: {
-						number: {
-							value: 80,
-						},
-						size: {
-							value: 2,
-						},
-						move: {
-							speed: 1,
-						},
-						shape: {
-							polygon: {
-								nb_sides: 10
-							}
-						}
-					},
+					fpsLimit: 60,
 					interactivity: {
+						detectsOn: "canvas",
 						events: {
-							onhover: {
-								enable: true,
-								mode: "repulse",
-							},
-							onclick: {
+							onClick: {
 								enable: true,
 								mode: "push",
 							},
+							onHover: {
+								enable: true,
+								mode: "repulse",
+							},
 							resize: true,
 						},
-						detect_on: "window",
+						modes: {
+							bubble: {
+								distance: 400,
+								duration: 8,
+								opacity: 0.8,
+								size: 4,
+							},
+							push: {
+								quantity: 3,
+							},
+							repulse: {
+								distance: 85,
+								duration: 1,
+							},
+						},
 					},
+					particles: {
+						color: {
+							value: "#ffffff",
+						},
+						links: {
+							color: "#ffffff",
+							distance: 150,
+							enable: true,
+							opacity: 0.5,
+							width: 1,
+						},
+						collisions: {
+							enable: true,
+						},
+						move: {
+							direction: "none",
+							enable: true,
+							outMode: "bounce",
+							random: false,
+							speed: 1,
+							straight: false,
+						},
+						number: {
+							density: {
+								enable: true,
+								value_area: 1000,
+							},
+							value: 100,
+						},
+						opacity: {
+							value: 0.5,
+						},
+						shape: {
+							type: "circle",
+							polygon: {
+								nb_sides: 8,
+							},
+						},
+						size: {
+							random: true,
+							value: 2,
+						},
+					},
+					detectRetina: true,
 				}}
 			/>
 		</Layout>
