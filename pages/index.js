@@ -20,11 +20,14 @@ export default function Home({ allPostsData }) {
 		<Layout home>
 			<Head>
 				<title>{siteTitle}</title>
+				<link rel="preconnect" href="https://fonts.googleapis.com" />
+				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+				<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
 			</Head>
 
 			<div className="body__container">
 				<section className={utilStyles.headingMd}>
-					<p>Ömer Boysal | Web Developer</p>
+					<p>Frontend Web Developer</p>
 					<p>
 						(This is a sample website - you’ll be building a site like this on{" "}
 						<a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
@@ -91,10 +94,10 @@ export default function Home({ allPostsData }) {
 					},
 					particles: {
 						color: {
-							value: "#ffffff",
+							value: "#fff",
 						},
 						links: {
-							color: "#ffffff",
+							color: "#656565",
 							distance: 150,
 							enable: true,
 							opacity: 0.5,
