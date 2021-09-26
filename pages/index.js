@@ -97,7 +97,7 @@ export default function Home({ allPostsData }) {
 							value: "#fff",
 						},
 						links: {
-							color: "#656565",
+							color: "#d8d8d8",
 							distance: 150,
 							enable: true,
 							opacity: 0.5,
