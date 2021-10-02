@@ -1,10 +1,14 @@
 import Head from "next/head";
 import Layout, { siteTitle } from "../components/layout";
 import utilStyles from "../styles/utils.module.css";
+import general from "../styles/general.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import Particles from "react-tsparticles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export async function getStaticProps() {
 	const allPostsData = getSortedPostsData();
@@ -28,10 +32,14 @@ export default function Home({ allPostsData }) {
 			<div className="body__container">
 				<section className={`${utilStyles.headingMd} ${utilStyles.subheading}`}>
 					<p>Frontend Web Developer</p>
-					<p>
-						(This is a sample website - you’ll be building a site like this on{" "}
-						<a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-					</p>
+					<div className={general.socialIconsContainer}>
+						<Link href="https://github.com/devBoysal">
+							<FontAwesomeIcon icon={faGithubSquare} className={general.socialIcons} />
+						</Link>
+						<Link href="https://www.linkedin.com/in/oboysal/">
+							<FontAwesomeIcon icon={faLinkedin} className={general.socialIcons} />
+						</Link>
+					</div>
 				</section>
 
 				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>

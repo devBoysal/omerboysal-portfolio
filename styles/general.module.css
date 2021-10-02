@@ -1,0 +1,14 @@
+/* Icons */
+
+.socialIconsContainer {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: white;
+    width: 20%;
+    border-radius: 10px;
+}
+
+
+.socialIcons {
+    width: 50px;
+}
