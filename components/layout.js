@@ -3,6 +3,10 @@ import Image from "next/image";
 import styles from "./layout.module.css";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import general from "../styles/general.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const name = "Ömer Boysal";
 export const siteTitle = "Omer Boysal | Portfolio";
@@ -22,28 +26,46 @@ export default function Layout({ children, home }) {
 				<meta name="og:title" content={siteTitle} />
 				<meta name="twitter:card" content="summary_large_image" />
 			</Head>
-			<header className={styles.header}>
-				{home ? (
-					<>
-						<Image priority src="/images/profile.jpg" className={utilStyles.borderCircle} height={160} width={160} alt={name} />
-						<h1 className={utilStyles.heading2Xl}>{name}</h1>
-					</>
-				) : (
-					<>
-						<Link href="/">
-							<a>
-								<Image
-									priority
-									src="/images/profile.jpg"
-									className={utilStyles.borderCircle}
-									height={160}
-									width={160}
-									alt={name}
-								/>
-							</a>
-						</Link>
-					</>
-				)}
+			<header>
+				<div className={general.socialIconsContainer}>
+					<Link href="https://github.com/devBoysal">
+						<FontAwesomeIcon icon={faGithubSquare} className={general.socialIcons} />
+					</Link>
+					<Link href="https://www.linkedin.com/in/oboysal/">
+						<FontAwesomeIcon icon={faLinkedin} className={general.socialIcons} />
+					</Link>
+				</div>
+				<div className={styles.header}>
+					{home ? (
+						<>
+							<Image
+								priority
+								src="/images/profile.jpg"
+								className={utilStyles.borderCircle}
+								height={160}
+								width={160}
+								alt={name}
+							/>
+							<h1 className={utilStyles.heading2Xl}>{name}</h1>
+							<p className={`${utilStyles.headingMd} ${utilStyles.subheading}`}>Frontend Web Developer</p>
+						</>
+					) : (
+						<>
+							<Link href="/">
+								<a>
+									<Image
+										priority
+										src="/images/profile.jpg"
+										className={utilStyles.borderCircle}
+										height={160}
+										width={160}
+										alt={name}
+									/>
+								</a>
+							</Link>
+						</>
+					)}
+				</div>
 			</header>
 			<main>{children}</main>
 			{!home && (

@@ -8,7 +8,17 @@
     border-radius: 10px;
 }
 
-
 .socialIcons {
     width: 50px;
+    cursor: pointer;
+}
+
+.body__container {
+    display: flex;
+    justify-content: center;
+}
+
+.page__container {
+    max-width: 37rem;
+    margin: 0 auto;
 }

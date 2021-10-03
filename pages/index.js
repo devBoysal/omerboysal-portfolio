@@ -6,9 +6,7 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 import Particles from "react-tsparticles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithubSquare } from "@fortawesome/free-brands-svg-icons";
-import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+
 
 export async function getStaticProps() {
 	const allPostsData = getSortedPostsData();
@@ -29,19 +27,7 @@ export default function Home({ allPostsData }) {
 				<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
 			</Head>
 
-			<div className="body__container">
-				<section className={`${utilStyles.headingMd} ${utilStyles.subheading}`}>
-					<p>Frontend Web Developer</p>
-					<div className={general.socialIconsContainer}>
-						<Link href="https://github.com/devBoysal">
-							<FontAwesomeIcon icon={faGithubSquare} className={general.socialIcons} />
-						</Link>
-						<Link href="https://www.linkedin.com/in/oboysal/">
-							<FontAwesomeIcon icon={faLinkedin} className={general.socialIcons} />
-						</Link>
-					</div>
-				</section>
-
+			<div className={general.body__container}>
 				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
 					<h2 className={utilStyles.headingLg}>Blog</h2>
 					<ul className={utilStyles.list}>
