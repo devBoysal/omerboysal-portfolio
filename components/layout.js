@@ -28,39 +28,26 @@ export default function Layout({ children, home }) {
 			</Head>
 			<header>
 				<div className={general.socialIconsContainer}>
-					<Link href="https://github.com/devBoysal">
+					<a href="https://github.com/devBoysal" target="_blank">
 						<FontAwesomeIcon icon={faGithubSquare} className={general.socialIcons} />
-					</Link>
-					<Link href="https://www.linkedin.com/in/oboysal/">
+					</a>
+
+					<a href="https://www.linkedin.com/in/oboysal/" target="_blank">
 						<FontAwesomeIcon icon={faLinkedin} className={general.socialIcons} />
-					</Link>
+					</a>
 				</div>
 				<div className={styles.header}>
 					{home ? (
 						<>
-							<Image
-								priority
-								src="/images/profile.jpg"
-								className={utilStyles.borderCircle}
-								height={160}
-								width={160}
-								alt={name}
-							/>
-							<h1 className={utilStyles.heading2Xl}>{name}</h1>
+							<Image priority src="/images/profile.jpg" className={utilStyles.borderCircle} height={180} width={180} alt={name} />
+							<h1 className={utilStyles.heading}>{name}</h1>
 							<p className={`${utilStyles.headingMd} ${utilStyles.subheading}`}>Frontend Web Developer</p>
 						</>
 					) : (
 						<>
 							<Link href="/">
 								<a>
-									<Image
-										priority
-										src="/images/profile.jpg"
-										className={utilStyles.borderCircle}
-										height={160}
-										width={160}
-										alt={name}
-									/>
+									<Image priority src="/images/profile.jpg" className={utilStyles.borderCircle} height={160} width={160} alt={name} />
 								</a>
 							</Link>
 						</>

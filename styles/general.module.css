@@ -1,24 +1,34 @@
 /* Icons */
 
 .socialIconsContainer {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: white;
-    width: 20%;
-    border-radius: 10px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 110px;
 }
 
 .socialIcons {
-    width: 50px;
-    cursor: pointer;
+	width: 50px;
+	cursor: pointer;
+	transition: all .5s;
+	transform-origin: 50% 50%;
 }
 
+.socialIcons:hover {
+	transform: scale(1.15);
+}
+
+.socialIcons path {
+	fill: white;
+}
+
+
 .body__container {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 .page__container {
-    max-width: 37rem;
-    margin: 0 auto;
+	max-width: 37rem;
+	margin: 0 auto;
 }

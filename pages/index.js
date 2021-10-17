@@ -7,7 +7,6 @@ import Link from "next/link";
 import Date from "../components/date";
 import Particles from "react-tsparticles";
 
-
 export async function getStaticProps() {
 	const allPostsData = getSortedPostsData();
 	return {
@@ -26,25 +25,6 @@ export default function Home({ allPostsData }) {
 				<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 				<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
 			</Head>
-
-			<div className={general.body__container}>
-				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-					<h2 className={utilStyles.headingLg}>Blog</h2>
-					<ul className={utilStyles.list}>
-						{allPostsData.map(({ id, date, title }) => (
-							<li className={utilStyles.listItem} key={id}>
-								<Link href={`/posts/${id}`}>
-									<a>{title}</a>
-								</Link>
-								<br />
-								<small className={utilStyles.lightText}>
-									<Date dateString={date} />
-								</small>
-							</li>
-						))}
-					</ul>
-				</section>
-			</div>
 			<Particles
 				id="tsparticles"
 				options={{
@@ -53,7 +33,7 @@ export default function Home({ allPostsData }) {
 					},
 					background: {
 						color: {
-							value: "#1C1C1C",
+							value: "#343634",
 						},
 					},
 					fpsLimit: 60,
@@ -132,6 +112,25 @@ export default function Home({ allPostsData }) {
 					detectRetina: true,
 				}}
 			/>
+
+			<div className={general.body__container}>
+				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+					<h2 className={utilStyles.headingMd}>Projects</h2>
+					<ul className={utilStyles.list}>
+						{allPostsData.map(({ id, date, title }) => (
+							<li className={utilStyles.listItem} key={id}>
+								<Link href={`/posts/${id}`}>
+									<a>{title}</a>
+								</Link>
+								<br />
+								<small className={utilStyles.lightText}>
+									<Date dateString={date} />
+								</small>
+							</li>
+						))}
+					</ul>
+				</section>
+			</div>
 		</Layout>
 	);
 }
